@@ -1,0 +1,35 @@
+Given a positive integer num, write a function which returns True if num is a perfect square else False.
+
+Follow up: Do not use any built-in library function such as sqrt.
+
+
+class Solution {
+    public static boolean isPerfectSquare(int num) {
+        double i=1;
+        boolean temp = false;
+        while(!temp){
+            if(i*i == num){
+                temp=true;
+            }
+            else if(i*i>num){
+                temp=false;
+                break;
+            }
+            i++;
+        }
+        if(temp)
+            return true;
+        else 
+            return false;
+        
+    }
+    public static void main(String [] args){
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+        if(isPerfectSquare(num)){
+            System.out.println("true");
+        }
+        else
+             System.out.println("false");
+    }
+}
