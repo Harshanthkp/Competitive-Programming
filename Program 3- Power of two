@@ -1,0 +1,35 @@
+Given an integer n, return true if it is a power of two. Otherwise, return false.
+
+An integer n is a power of two, if there exists an integer x such that n == 2x.
+
+
+class Solution {
+    public static boolean isPowerOfTwo(int n) {
+        double i =0;
+        boolean temp=false;
+        while(!temp){
+            if(Math.pow(2,i)==n){
+                temp=true;
+            }
+            else if(Math.pow(2,i)>n){
+                temp=false;
+                break;
+            }
+            i++;
+        }
+        if(temp)
+            return true;
+        else
+            return false;
+    }
+    public static void main(String [] args){
+        Scanner in = new Scanner(System.in);
+        int n= in.nextInt();
+        if(isPowerOfTwo(n)){
+            System.out.println("true");
+        }
+        else{
+            System.out.println("false");
+        }
+    }
+}
